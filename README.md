@@ -1,90 +1,43 @@
-# Nombre del estudiante: Lisandro Martinez
-# Grupo: 75
-# Programa: Ingenieria de sistemas
-# Código Fuente: Autoría propia
+Sistema de Clasificación de Compromiso
+Descripción
 
-# FUNCION PARA CLASIFICAR EL COMPROMISO
+Este proyecto fue desarrollado en Python y permite registrar sesiones de usuarios para clasificar su nivel de compromiso según la duración de la sesión y la cantidad de clics realizados.
 
-def clasificar_compromiso(duracion, clics):
+El programa utiliza estructuras condicionales, funciones, ciclos y matrices para almacenar y procesar la información ingresada por el usuario.
 
-    if duracion > 180 and clics > 8:
-        return "Alto"
+Datos del estudiante
+Nombre: Lisandro Martinez
+Grupo: 75
+Programa: Ingeniería de Sistemas
+Funcionalidades
 
-    elif duracion < 60 or clics < 3:
-        return "Bajo"
+El sistema permite:
 
-    else:
-        return "Medio"
+Registrar nuevas sesiones.
+Guardar la información en una matriz.
+Clasificar automáticamente el compromiso del usuario.
+Mostrar un informe detallado de las sesiones registradas.
+Criterios de clasificación
+Alto:
+Duración mayor a 180 segundos.
+Más de 8 clics.
+Bajo:
+Duración menor a 60 segundos.
+Menos de 3 clics.
+Medio:
+Cualquier otro caso.
+Tecnologías utilizadas
+Python 3
+Ejecución del programa
 
+Para ejecutar el programa:
 
-# MATRIZ DONDE SE GUARDAN LAS SESIONES
+python main.py
+Ejemplo de funcionamiento
+Cliente: 1001
+Duracion: 250 segundos
+Clics: 12
+Clasificacion: Alto
+Autor
 
-sesiones = []
-
-# MENU PRINCIPAL
-
-while True:
-
-    print("\n====================================")
-    print("   SISTEMA DE CLASIFICACION")
-    print("====================================")
-    print("1. Registrar nueva sesion")
-    print("2. Mostrar informe")
-    print("3. Salir")
-
-    opcion = input("Seleccione una opcion: ")
-
-    # OPCION 1 - REGISTRAR SESION
-
-    if opcion == "1":
-
-        id_cliente = input("Ingrese el ID del cliente: ")
-
-        duracion = int(input("Ingrese la duracion de la sesion en segundos: "))
-
-        clics = int(input("Ingrese la cantidad de clics: "))
-
-        # Guardar en la matriz
-        sesiones.append([id_cliente, duracion, clics])
-
-        print("Sesion registrada correctamente.")
-
-    # OPCION 2 - MOSTRAR INFORME
-
-    elif opcion == "2":
-
-        if len(sesiones) == 0:
-            print("No hay sesiones registradas.")
-
-        else:
-
-            print("\n====================================")
-            print(" INFORME DE COMPROMISO")
-            print("====================================")
-
-            for sesion in sesiones:
-
-                id_cliente = sesion[0]
-                duracion = sesion[1]
-                clics = sesion[2]
-
-                clasificacion = clasificar_compromiso(duracion, clics)
-
-                print("\nCliente:", id_cliente)
-                print("Duracion:", duracion, "segundos")
-                print("Clics:", clics)
-                print("Clasificacion:", clasificacion)
-                print("------------------------------------")
-
-    # OPCION 3 - SALIR
-
-    elif opcion == "3":
-
-        print("Programa finalizado.")
-        break
-
-    # OPCION INVALIDA
-
-    else:
-
-        print("Opcion invalida. Intente nuevamente.")
+Código fuente de autoría propia.
